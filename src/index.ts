@@ -22,7 +22,10 @@ const main = async (): Promise<void> => {
     console.log('Failed to load env variables | ', result.error);
   }
 
-  console.log(result.parsed);
+  console.log('=======================================================');
+  console.log('result.parsed', result.parsed);
+  console.log('DATABASE_URL', process.env.DATABASE_URL);
+  console.log('=======================================================');
 
   await createConnection();
   const schema = await buildSchema({
